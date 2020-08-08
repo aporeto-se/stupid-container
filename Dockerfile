@@ -1,9 +1,9 @@
-FROM alpine:latest
+FROM fedora:31
 WORKDIR /
 MAINTAINER jodyscott
 
-RUN apk update
-RUN apk add bash curl bind-tools
+RUN dnf -y update
+RUN dnf -y install bind-utils jq net-tools procps iproute
 
 ADD stupid-curl /usr/bin/stupid-curl
 RUN chmod +x /usr/bin/stupid-curl
