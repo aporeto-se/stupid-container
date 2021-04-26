@@ -14,4 +14,7 @@ RUN chmod +x /usr/sbin/stupid-http
 ADD entrypoint.sh /
 RUN chmod 755 /entrypoint.sh
 
+ADD cache/kubectl /usr/bin/kubectl
+RUN chmod 755 /usr/bin/kubectl
+
 CMD ["/entrypoint.sh"]
